@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+body {
+  background-color: #05060d;
+  color: #efefef;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.container {
+  width: min(100% - 30px, 1350px);
+  margin-inline: auto;
+}
+
+.head h2 {
+  line-height: 50px;
+}
+
+.head-list {
+  line-height: 50px;
+}
+
+
+.showcase-area {
+  height: 93vh;
+  background: linear-gradient(
+      rgba(240, 240, 240, 0.144),
+      rgba(255, 255, 255, 0.336)
+    ),
+    url("https://i.postimg.cc/wT3TQS3V/header-image2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.showcase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 2.6rem;
+}
+
+.showcase-container p {
+  color: #05060d;
+}
+
+.main-title {
+  text-transform: uppercase;
+}
+
+.button-hero {
+  margin-top: 2rem;
+  width: 140px;
+  height: 40px;
+  font-size: 1.8rem;
+}
+
+a {
+  color: #efefef;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  background: linear-gradient(0deg, rgba(98, 231, 255) 0%, rgba(10, 178, 207) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.grid-1 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  gap: 30px;
+  text-align: center;
+
+}
+
+input[type="text"] {
+  width: 250px;
+  height: 35px;
+  font-weight: 500;
+  color: #212534;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 5px 5px 12px 3px rgba(255, 255, 255, .5);
+  outline: none;
+}
+
+button {
+  width: 100px;
+  height: 35px;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #212534;
+  border-radius: 5px;
+  padding: 0px 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(0deg, rgba(98, 231, 255) 0%, rgba(10, 178, 207) 100%);
+  box-shadow: inset 5px 5px 12px 3px rgba(255, 255, 255, .5);
+  outline: none;
+}
+
+#explore-menu {
+  
+}
+
+.head-main {
+  text-align: center;
+}
+
+.button-sort {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.name1 h1 {
+  text-align: center;
+  font-size: 40px;
+  margin: 30px 0px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--app-orange);
+  text-decoration: none;
+  letter-spacing: 0.6px;
+  line-height: 50px;
+}
+
+.contact-head p {
+  color: #f1f1f1;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  letter-spacing: 0.4px;
+}
+
+.contact h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+p {
+  color: #f1f1f1;
+  font-size: 18px;
+}
+.page3-box {
+  align-items: center;
+  padding: 20px 0;
+  opacity: 0;
+  transition: all 1s;
+  filter: blur(5px);
+  transform: translate(-100%);
+}
+
+.page3-box-1 {
+  align-items: center;
+  padding: 20px 0;
+  opacity: 0;
+  transition: all 1s;
+  filter: blur(5px);
+  transform: translateX(100%);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0);
+}
+
+.contact {
+  display: flex;
+  background-color: #fff;
+  margin: 5% 0px;
+  border-radius: 10px;
+}
+.contact-left {
+  flex-basis: 60%;
+  padding: 40px;
+}
+
+.contact-right {
+  background: url(../food.jpg) center center;
+  flex-basis: 40%;
+  border-radius: 10px;
+}
+.input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input .input-info {
+  flex-basis: 45%;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  padding-bottom: 5px;
+}
+textarea {
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  padding: 10px;
+}
+
+textarea {
+  resize: none;
+}
+
+label {
+  margin-bottom: 6px;
+  display: block;
+  color: var(--app-dark-blue2);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.btn {
+  display: flex;
+  gap: 20px;
+}
