@@ -6,6 +6,8 @@ import HeroBanner from './components/HeroBanner';
 import Menu from './components/Menu';
 import RecipeDetails from './components/RecipeDetails';
 import AddNew from './components/AddNew';
+import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 const App = () => {
   const routing = useRoutes([
@@ -18,7 +20,6 @@ const App = () => {
     },
     { path: '/recipe/:id', element: (
         <>
-          <HeroBanner />
           <RecipeDetails />
         </>
       ) 
@@ -31,6 +32,8 @@ const App = () => {
     <>
       <Header />
       {routing}
+      <BackToTop />
+      <Footer />
     </>
   );
 };

@@ -28,11 +28,14 @@ const RecipeDetails = () => {
   }
 
   return (
-    <div>
-      <h2>{recipeDetails.title}</h2>
+    <div className='grid-details'>
+    <div className='grid-details-child'>
+      <div className='center'>
+        <h2>{recipeDetails.title}</h2>
       <img src={recipeDetails.image} alt={recipeDetails.title} />
-
-      <h3>Ingredients:</h3>
+      </div>
+      <div>
+        <h3>Ingredients:</h3>
       <ul>
         {recipeDetails.extendedIngredients.map(ingredient => (
           <li key={ingredient.id}>{ingredient.original}</li>
@@ -45,6 +48,8 @@ const RecipeDetails = () => {
           <li key={step.number}>{step.step}</li>
         ))}
       </ol>
+      </div>
+      </div>
     </div>
   );
 };
