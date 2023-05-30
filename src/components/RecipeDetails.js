@@ -15,6 +15,7 @@ const RecipeDetails = () => {
           }
         });
         setRecipeDetails(response.data);
+        document.title = response.data.title;
       } catch (error) {
         console.error(error);
       }
@@ -29,26 +30,26 @@ const RecipeDetails = () => {
 
   return (
     <div className='grid-details'>
-    <div className='grid-details-child'>
-      <div className='center'>
-        <h2>{recipeDetails.title}</h2>
-      <img src={recipeDetails.image} alt={recipeDetails.title} />
-      </div>
-      <div>
-        <h3>Ingredients:</h3>
-      <ul>
-        {recipeDetails.extendedIngredients.map(ingredient => (
-          <li key={ingredient.id}>{ingredient.original}</li>
-        ))}
-      </ul>
+      <div className='grid-details-child'>
+        <div className='center'>
+          <h2>{recipeDetails.title}</h2>
+          <img src={recipeDetails.image} alt={recipeDetails.title} />
+        </div>
+        <div>
+          <h3>Ingredients:</h3>
+          <ul>
+            {recipeDetails.extendedIngredients.map(ingredient => (
+              <li key={ingredient.id}>{ingredient.original}</li>
+            ))}
+          </ul>
 
-      <h3>Instructions:</h3>
-      <ol>
-        {recipeDetails.analyzedInstructions[0].steps.map(step => (
-          <li key={step.number}>{step.step}</li>
-        ))}
-      </ol>
-      </div>
+          <h3>Instructions:</h3>
+          <ol>
+            {recipeDetails.analyzedInstructions[0].steps.map(step => (
+              <li key={step.number}>{step.step}</li>
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   );

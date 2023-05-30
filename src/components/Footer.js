@@ -2,12 +2,15 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <footer className="container">
       <section className="foot flex">
-        <h2>U-Dev</h2>
+       <h2 className="home">
+          <Link to="/menu.js">U-Dev</Link>
+        </h2>
         <ul className="head-list flex">
         <li><a href="https://github.com/UDAY-2997">
         <FontAwesomeIcon icon={faGithub} />

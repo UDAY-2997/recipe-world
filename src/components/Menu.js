@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, useLocation } from 'react-router-dom';
 import RecipeDetails from './RecipeDetails';
 
 const Menu = () => {
   const [recipes, setRecipes] = useState([]);
   const [selectedSort, setSelectedSort] = useState('popularity');
+  const location = useLocation();
+  const recipeRefs = useRef({}); // Declare recipeRefs as a useRef
 
   const fetchRecipes = async () => {
     try {
@@ -26,7 +28,26 @@ const Menu = () => {
 
   useEffect(() => {
     fetchRecipes();
-  }, [selectedSort]);
+
+    // Scroll to the recipe element if the URL has a hash
+    if (location.hash && Object.keys(recipeRefs.current).length > 0) {
+      const recipeId = location.hash.substring(1);
+      const targetRecipe = recipeRefs.current[recipeId];
+      if (targetRecipe && targetRecipe.ref) {
+        targetRecipe.ref.scrollIntoView({ behavior: 'smooth' });
+        targetRecipe.ref.classList.add('highlight');
+      }
+    }
+
+    return () => {
+      // Remove the highlight class when leaving the menu page
+      Object.values(recipeRefs.current).forEach(recipe => {
+        if (recipe.ref) {
+          recipe.ref.classList.remove('highlight');
+        }
+      });
+    };
+  }, [selectedSort, location]);
 
   const handleSortChange = (event) => {
     setSelectedSort(event.target.value);
@@ -35,6 +56,10 @@ const Menu = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchRecipes();
+  };
+
+  const handleRecipeRef = (id, ref) => {
+    recipeRefs.current[id] = { id, ref };
   };
 
   return (
@@ -56,7 +81,7 @@ const Menu = () => {
         <div>
           <ul className='grid-main'>
             {recipes.map(recipe => (
-              <li key={recipe.id}>
+              <li key={recipe.id} ref={ref => handleRecipeRef(recipe.id, ref)}>
                 <Link to={`/recipe/${recipe.id}`}>
                   <h2 className='elipsis'>{recipe.title}</h2>
                   <img src={recipe.image} alt={recipe.title} />

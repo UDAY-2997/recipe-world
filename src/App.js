@@ -8,6 +8,7 @@ import RecipeDetails from './components/RecipeDetails';
 import AddNew from './components/AddNew';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import PageNotFound from './components/PageNotFound';
 
 const App = () => {
   const routing = useRoutes([
@@ -25,7 +26,7 @@ const App = () => {
       ) 
     },
     { path: '/add-new', element: <AddNew /> },
-    { path: '*', element: <Navigate to="/" replace /> }, // Default redirect
+    { path: '*', element: <Navigate to="/" replace /> }, 
   ]);
 
   return (

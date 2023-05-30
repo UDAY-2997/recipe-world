@@ -18,12 +18,27 @@ ol li {
   margin-inline: auto;
 }
 
-.head {
-  padding-bottom: 30px;
+.showcase-container h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.showcase-container p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.head-main h1 {
+  font-size: 43px;
 }
 
 .head h2 {
   line-height: 50px;
+  cursor: pointer;
+}
+
+.home a {
+  color: #3db5e8;
 }
 
 .head-list ul {
@@ -38,7 +53,7 @@ ol li {
   line-height: 50px;
 }
 
-.head-list ul li:hover {
+.head-list li:hover {
   color: #05060d;
   background: linear-gradient(to right, #a3dbf4, #3db5e8);
 }
@@ -66,8 +81,26 @@ ol li {
   color: #05060d;
 }
 
-.main-title {
+img {
+  border-radius: 5px;
+}
+
+img .main-title {
   text-transform: uppercase;
+}
+
+.grid-main li {
+  position: relative;
+}
+
+.grid-main li:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.grid-main li img {
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .button-hero {
@@ -181,7 +214,6 @@ button {
   margin: 30px 0px;
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--app-orange);
   text-decoration: none;
   letter-spacing: 0.6px;
   line-height: 50px;
@@ -209,7 +241,6 @@ p {
 
 .page3-box {
   align-items: center;
-  padding: 20px 0;
   opacity: 0;
   transition: all 1s;
   filter: blur(5px);
@@ -218,7 +249,6 @@ p {
 
 .page3-box-1 {
   align-items: center;
-  padding: 20px 0;
   opacity: 0;
   transition: all 1s;
   filter: blur(5px);
@@ -240,7 +270,7 @@ p {
 
 .contact-left {
   flex-basis: 60%;
-  padding: 40px;
+  padding: 20px 40px 40px;
 }
 
 .contact-right {
@@ -257,6 +287,11 @@ p {
 
 .input .input-info {
   flex-basis: 45%;
+}
+
+#serving,
+#dishType {
+  cursor: pointer;
 }
 
 input {
@@ -282,7 +317,7 @@ textarea {
 label {
   margin-bottom: 6px;
   display: block;
-  color: var(--app-dark-blue2);
+  color: #05060d;
   font-weight: 600;
   font-size: 18px;
 }
@@ -290,6 +325,7 @@ label {
 .btn {
   display: flex;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .elipsis {
@@ -298,6 +334,7 @@ label {
   white-space: nowrap;
   max-width: 254px;
 }
+
 
 .grid-main {
   grid-gap: 20px;
@@ -337,8 +374,8 @@ h3 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #333;
-  color: #fff;
+  background: linear-gradient(0deg, rgba(98, 231, 255) 0%, rgba(10, 178, 207) 100%);
+  color: #05060d;
   text-align: center;
   line-height: 40px;
   cursor: pointer;
@@ -356,4 +393,28 @@ h3 {
 
 .foot {
   margin-top: 30px;
+}
+
+@media (max-width: 992px) {
+  .grid-main {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 568px) {
+  .grid-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 368px) {
+  .grid-main {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
